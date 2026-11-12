@@ -1,0 +1,1329 @@
+Here is a simple Event Registration Web Application using HTML, CSS, and JavaScript. It is suitable for your web technology lab exam.
+1. HTML – index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Event Registration Form</h2>
+
+<form id="myForm">
+
+    Full Name:
+    <input type="text" id="name"><br>
+
+    Email:
+    <input type="text" id="email"><br>
+
+    Phone Number:
+    <input type="text" id="phone"><br>
+
+    Gender:
+    <select id="gender">
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select><br>
+
+    College Name:
+    <input type="text" id="college"><br>
+
+    Department:
+    <input type="text" id="dept"><br>
+
+    Year of Study:
+    <select id="year">
+        <option value="">Select</option>
+        <option>1st Year</option>
+        <option>2nd Year</option>
+        <option>3rd Year</option>
+        <option>4th Year</option>
+    </select><br>
+
+    Event:
+    <select id="event">
+        <option value="">Select Event</option>
+        <option>Technical</option>
+        <option>Cultural</option>
+        <option>Sports</option>
+    </select><br>
+
+    <button type="submit">Register</button>
+    <button type="reset">Reset</button>
+
+</form>
+
+<p id="result"></p>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+2. CSS – style.css
+
+body {
+    font-family: Arial;
+    background: lightblue;
+    text-align: center;
+}
+
+form {
+    background: white;
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+}
+
+input, select {
+    width: 90%;
+    padding: 8px;
+    margin: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    margin: 10px;
+    background: green;
+    color: white;
+    border: none;
+}
+
+
+
+3. JavaScript – script.js
+
+document.getElementById("myForm").onsubmit = function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let gender = document.getElementById("gender").value;
+    let college = document.getElementById("college").value;
+    let dept = document.getElementById("dept").value;
+    let year = document.getElementById("year").value;
+    let event = document.getElementById("event").value;
+
+    let result = document.getElementById("result");
+
+    if (!name || !email || !phone || !gender ||
+        !college || !dept || !year || !event) {
+        result.innerHTML = "Please fill all fields!";
+        result.style.color = "red";
+    }
+    else if (!email.includes("@") || !email.includes(".")) {
+        result.innerHTML = "Invalid Email!";
+        result.style.color = "red";
+    }
+    else if (!/^[0-9]{10}$/.test(phone)) {
+        result.innerHTML = "Enter valid 10 digit phone number!";
+        result.style.color = "red";
+    }
+    else {
+        result.style.color = "green";
+        result.innerHTML =
+            "Registration Successful!<br>" +
+            "Name: " + name + "<br>" +
+            "Email: " + email + "<br>" +
+            "Phone: " + phone + "<br>" +
+            "Gender: " + gender + "<br>" +
+            "College: " + college + "<br>" +
+            "Department: " + dept + "<br>" +
+            "Year: " + year + "<br>" +
+            "Event: " + event;
+    }
+};
+
+document.getElementById("myForm").onreset = function() {
+    document.getElementById("result").innerHTML = "";
+};
+
+
+
+4. Output
+Registration form
+
+
+
+
+
+
+
+
+devpost.com
+
+
+After successful registration:
+Registration Successful!
+
+Name: Abhi
+Email: abhi@gmail.com
+Phone: 9876543210
+Gender: Male
+College: ABC College
+Department: CSE
+Year: 2nd Year
+Event: Technical
+
+
+
+COMPLEX CODES :❤️❤️❤️❤️❤️
+   DevOps Lab External – Free Style Projects (10 Marks)
+Below are detailed, exam-ready answers for all three programs. They include Aim, Software Requirements, Procedure, Program/Configuration, Execution and Result. You can write these in your lab external exam and explain the steps to the examiner.
+
+1. Implement CI/CD for Java Application using Jenkins, GitHub and Maven
+Aim
+To implement Continuous Integration and Continuous Delivery (CI/CD) for a Java application using Jenkins, GitHub and Maven by automating source code checkout, compilation, testing and application packaging whenever code changes are committed.
+Software Requirements
+1. Java JDK
+2. Jenkins Server
+3. Git and GitHub account
+4. Apache Maven
+5. Web browser
+6. Windows operating system
+Description
+- GitHub: Stores the Java source code.
+- Jenkins: Automatically executes the build process.
+- Maven: Compiles, tests and packages the Java application.
+- CI: Integrates code changes regularly.
+- CD: Prepares the application for delivery or deployment.
+Procedure
+Step 1: Create a Java Project
+
+Create a folder named JavaApp.
+
+Inside the folder, create the following structure:
+JavaApp/
+   src/
+      Hello.java
+   pom.xml
+
+
+Step 2: Write Java Program
+
+Create Hello.java inside the src folder.
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello Java CI/CD");
+        System.out.println("Jenkins Build Successful");
+    }
+}
+
+
+Step 3: Create Maven Configuration
+
+Create a file named pom.xml in the main project folder.
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+ https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>javaapp</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+</project>
+
+
+Step 4: Upload Project to GitHub
+1. Open GitHub.
+2. Create a new repository named JavaApp.
+3. Upload the src folder and pom.xml.
+4. Copy the repository URL.
+Step 5: Create Jenkins Job
+1. Open Jenkins in the browser.
+2. Click on New Item.
+3. Enter the project name Java-CI-CD.
+4. Select Freestyle Project.
+5. Click OK.
+Step 6: Configure GitHub
+1. Go to Source Code Management.
+2. Select Git.
+3. Paste the GitHub repository URL.
+4. Save the configuration.
+Step 7: Configure Build
+1. Go to Build Steps.
+2. Select Execute Windows Batch Command.
+3. Enter the following command:
+mvn clean package
+
+
+This command performs:
+- clean – Removes old build files.
+- compile – Compiles Java source code.
+- test – Executes available tests.
+- package – Creates a JAR file.
+Step 8: Configure Automatic Build
+1. Enable GitHub webhook integration in Jenkins.
+2. Configure a webhook in the GitHub repository pointing to the Jenkins webhook endpoint.
+3. Enable the GitHub push trigger in the Jenkins job.
+4. Whenever code is pushed to GitHub, Jenkins starts the build automatically.
+Step 9: Execute the Project
+1. Click Save.
+2. Click Build Now for the first build.
+3. Open Console Output.
+4. Check the build status.
+5. The generated JAR file will be available inside the target folder.
+Expected Output
+[INFO] Scanning for projects...
+[INFO] Building javaapp 1.0
+[INFO] Compiling source code
+[INFO] Building jar
+[INFO] BUILD SUCCESS
+
+
+Result
+Thus, the Java application is successfully integrated with GitHub and Jenkins. Maven automatically compiles, tests and packages the application whenever code changes are committed.
+
+2. Implement CI/CD for Python Application using Jenkins and GitHub
+Aim
+To implement Continuous Integration and Continuous Delivery (CI/CD) for a Python application using Jenkins and GitHub by automating source code checkout, execution, testing and application packaging whenever code changes are committed.
+Software Requirements
+1. Python 3
+2. Jenkins Server
+3. Git and GitHub account
+4. Pytest testing framework
+5. Windows operating system
+6. Web browser
+Description
+- Python: Used to develop the application.
+- GitHub: Stores and manages Python source code.
+- Jenkins: Automates the build and testing process.
+- Pytest: Used to test the Python application.
+- CI/CD: Automatically checks and processes code changes.
+Procedure
+Step 1: Create a Python Project
+
+Create a folder named PythonApp.
+
+Project structure:
+PythonApp/
+   hello.py
+   test_hello.py
+   requirements.txt
+
+
+Step 2: Write Python Program
+
+Create hello.py.
+def add(a, b):
+    return a + b
+
+print("Welcome to Python CI/CD")
+print("Addition:", add(10, 20))
+
+
+
+Step 3: Create Test File
+
+Create test_hello.py.
+from hello import add
+
+def test_add():
+    assert add(10, 20) == 30
+
+def test_sub():
+    assert 20 - 10 == 10
+
+def test_mul():
+    assert 5 * 2 == 10
+
+
+
+Step 4: Create Requirements File
+
+Create requirements.txt.
+pytest
+
+
+This file contains the required Python testing package.
+
+Step 5: Upload Project to GitHub
+1. Open GitHub.
+2. Create a new repository named PythonApp.
+3. Upload hello.py, test_hello.py and requirements.txt.
+4. Copy the repository URL.
+Step 6: Create Jenkins Job
+1. Open Jenkins in the browser.
+2. Click New Item.
+3. Enter the project name Python-CI-CD.
+4. Select Freestyle Project.
+5. Click OK.
+Step 7: Configure GitHub Repository
+1. Go to Source Code Management.
+2. Select Git.
+3. Paste the GitHub repository URL.
+4. Save the configuration.
+Step 8: Configure Build Commands
+1. Go to Build Steps.
+2. Select Execute Windows Batch Command.
+3. Enter the following commands:
+python --version
+pip install -r requirements.txt
+python hello.py
+python -m pytest -v
+
+
+Explanation:
+- python --version – Checks Python installation.
+- pip install – Installs required packages.
+- python hello.py – Executes the application.
+- python -m pytest -v – Runs all test cases.
+Step 9: Configure Application Packaging
+
+Add another build step and execute:
+powershell Compress-Archive -Path hello.py,test_hello.py,requirements.txt -DestinationPath PythonApp.zip -Force
+
+
+This creates a ZIP file containing the Python application files.
+
+Step 10: Configure Automatic Build
+1. Enable GitHub webhook integration in Jenkins.
+2. Add the Jenkins webhook URL in GitHub repository settings.
+3. Enable the GitHub push trigger in Jenkins.
+4. Whenever a developer pushes code to GitHub, Jenkins automatically downloads and tests the latest code.
+Step 11: Execute the Project
+1. Click Save.
+2. Click Build Now.
+3. Open Console Output.
+4. Check whether all test cases pass.
+5. Verify the generated PythonApp.zip file in the Jenkins workspace.
+Expected Output
+Welcome to Python CI/CD
+Addition: 30
+
+========================
+3 passed
+========================
+
+Finished: SUCCESS
+
+
+Result
+Thus, the Python application is successfully integrated with GitHub and Jenkins. The application is automatically executed, tested and packaged whenever code changes are committed.
+
+
+
+3. Implement CI/CD for Node.js Application using Jenkins and GitHub
+Aim
+To implement Continuous Integration and Continuous Delivery (CI/CD) for a Node.js application using Jenkins and GitHub by automating source code checkout, execution, testing and application packaging whenever code changes are committed.
+Software Requirements
+1. Node.js
+2. npm (Node Package Manager)
+3. Jenkins Server
+4. Git and GitHub account
+5. Windows operating system
+6. Web browser
+Note: Node.js normally uses npm for building and packaging instead of Maven. Maven is mainly used for Java projects.
+Description
+- Node.js: Used to execute JavaScript applications.
+- npm: Manages dependencies and application scripts.
+- GitHub: Stores the application source code.
+- Jenkins: Automates the CI/CD process.
+- CI/CD: Automates application execution, testing and packaging.
+Procedure
+Step 1: Create a Node.js Project
+
+Create a folder named NodeApp.
+
+Project structure:
+NodeApp/
+   app.js
+   test.js
+   package.json
+
+
+Step 2: Create Node.js Application
+
+Create app.js.
+function add(a, b) {
+    return a + b;
+}
+
+console.log("Welcome to Node.js CI/CD");
+console.log("Addition:", add(10, 20));
+
+module.exports = add;
+
+
+Step 3: Create Test File
+
+Create test.js.
+const add = require("./app");
+
+const assert = require("assert");
+
+assert.strictEqual(add(10, 20), 30);
+assert.strictEqual(add(5, 5), 10);
+
+console.log("All Tests Passed");
+
+
+Step 4: Create package.json
+
+Create package.json.
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "description": "Node.js CI/CD Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test.js"
+  }
+}
+
+
+Step 5: Upload Project to GitHub
+1. Open GitHub.
+2. Create a repository named NodeApp.
+3. Upload app.js, test.js and package.json.
+4. Copy the repository URL.
+Step 6: Create Jenkins Job
+1. Open Jenkins.
+2. Click New Item.
+3. Enter the project name Node-CI-CD.
+4. Select Freestyle Project.
+5. Click OK.
+Step 7: Configure GitHub
+1. Go to Source Code Management.
+2. Select Git.
+3. Enter the GitHub repository URL.
+4. Save the configuration.
+Step 8: Configure Build Commands
+1. Go to Build Steps.
+2. Select Execute Windows Batch Command.
+3. Enter:
+node --version
+npm install
+npm start
+npm test
+
+
+Explanation:
+- node --version – Checks Node.js installation.
+- npm install – Installs dependencies.
+- npm start – Runs the application.
+- npm test – Executes test cases.
+Step 9: Configure Application Packaging
+
+Add another build step and enter:
+powershell Compress-Archive -Path app.js,test.js,package.json -DestinationPath NodeApp.zip -Force
+
+
+This creates a ZIP file containing the Node.js application.
+
+Step 10: Configure Automatic Build
+1. Enable GitHub webhook integration in Jenkins.
+2. Add the Jenkins webhook URL to GitHub.
+3. Enable the GitHub push trigger in Jenkins.
+4. Whenever code is pushed to GitHub, Jenkins automatically starts the build.
+Step 11: Execute the Project
+1. Click Save.
+2. Click Build Now.
+3. Open Console Output.
+4. Verify the application output.
+5. Check whether all tests pass.
+6. Verify the generated NodeApp.zip file.
+Expected Output
+Welcome to Node.js CI/CD
+Addition: 30
+
+All Tests Passed
+
+Finished: SUCCESS
+
+
+Result
+Thus, the Node.js application is successfully integrated with GitHub and Jenkins. The application is automatically executed, tested and packaged whenever code changes are committed.
+ 
+
+ ❤️
+
+4. CI/CD for Java Application using Jenkins, GitHub and Maven (Pipeline Script)
+Aim
+To implement Continuous Integration and Continuous Delivery (CI/CD) for a Java application using Jenkins, GitHub and Maven through a Pipeline Script. Automate source code checkout, compilation, testing and application packaging whenever code changes are committed.
+Requirements
+1. Java JDK
+2. Jenkins
+3. Git and GitHub
+4. Apache Maven
+5. Maven and Git plugins in Jenkins
+Step 1: Create Java Project
+Project structure:
+JavaApp/
+ ├── pom.xml
+ ├── Jenkinsfile
+ └── src/
+     ├── main/java/Hello.java
+     └── test/java/HelloTest.java
+
+
+Step 2: Create Java Program
+File: src/main/java/Hello.java
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello Java CI/CD");
+    }
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+}
+
+
+Step 3: Create Test Program
+File: src/test/java/HelloTest.java
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class HelloTest {
+
+    @Test
+    public void testAdd() {
+        Hello h = new Hello();
+        assertEquals(30, h.add(10, 20));
+    }
+}
+
+
+Step 4: Create Maven File
+File: pom.xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+ https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.demo</groupId>
+    <artifactId>java-app</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+
+
+Step 5: Create Jenkins Pipeline Script
+Create a file named Jenkinsfile in the main project folder.
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/USERNAME/JavaApp.git'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                bat 'mvn compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat 'mvn package'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Java Build Successful'
+        }
+        failure {
+            echo 'Java Build Failed'
+        }
+    }
+}
+
+
+Replace USERNAME with your GitHub username and use the correct repository URL.
+Step 6: Upload to GitHub
+1. Create a repository named JavaApp.
+2. Upload all project files.
+3. Include the Jenkinsfile.
+4. Commit and push the code.
+Step 7: Configure Jenkins
+1. Open Jenkins.
+2. Click New Item.
+3. Enter Java-Pipeline.
+4. Select Pipeline.
+5. Click OK.
+6. Select Pipeline Script from SCM.
+7. Select Git.
+8. Enter GitHub repository URL.
+9. Select branch main.
+10. Enter Script Path as Jenkinsfile.
+11. Click Save.
+Step 8: Execute Pipeline
+1. Click Build Now.
+2. Open Console Output.
+3. Observe the stages:
+   - Checkout
+   - Compile
+   - Test
+   - Package
+4. Check the generated JAR file inside the target folder.
+To trigger builds automatically on every GitHub commit, configure a GitHub webhook and enable the GitHub push trigger in Jenkins.
+Expected Output
+Checkout - SUCCESS
+Compile - SUCCESS
+Test - SUCCESS
+Package - SUCCESS
+
+Java Build Successful
+Finished: SUCCESS
+
+
+Result
+Thus, the Java application is successfully integrated with Jenkins, GitHub and Maven using Pipeline Script. Source code checkout, compilation, testing and packaging are automated.
+
+5. CI/CD for Python Application using Jenkins and GitHub (Pipeline Script)
+Aim
+To implement Continuous Integration and Continuous Delivery (CI/CD) for a Python application using Jenkins and GitHub through Pipeline Script by automating source code checkout, execution, testing and packaging.
+Requirements
+1. Python 3
+2. Jenkins
+3. Git and GitHub
+4. Pytest
+5. Jenkins Pipeline plugin
+Step 1: Create Python Project
+Project structure:
+PythonApp/
+ ├── app.py
+ ├── test_app.py
+ ├── requirements.txt
+ └── Jenkinsfile
+
+
+Step 2: Create Python Program
+File: app.py
+def add(a, b):
+    return a + b
+
+print("Hello Python CI/CD")
+print("Addition:", add(10, 20))
+
+
+
+Step 3: Create Test File
+File: test_app.py
+from app import add
+
+def test_add():
+    assert add(10, 20) == 30
+
+def test_sub():
+    assert 20 - 10 == 10
+
+
+
+Step 4: Create Requirements File
+File: requirements.txt
+pytest
+
+
+Step 5: Create Jenkins Pipeline Script
+Create a file named Jenkinsfile.
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/USERNAME/PythonApp.git'
+            }
+        }
+
+        stage('Install') {
+            steps {
+                bat 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                bat 'python app.py'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'python -m pytest -v'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat 'powershell Compress-Archive -Path app.py,test_app.py,requirements.txt -DestinationPath PythonApp.zip -Force'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Python Build Successful'
+        }
+        failure {
+            echo 'Python Build Failed'
+        }
+    }
+}
+
+
+Replace USERNAME with your GitHub username.
+Step 6: Upload to GitHub
+1. Create a repository named PythonApp.
+2. Upload all Python files.
+3. Include the Jenkinsfile.
+4. Commit and push the code.
+Step 7: Configure Jenkins
+1. Open Jenkins.
+2. Click New Item.
+3. Enter Python-Pipeline.
+4. Select Pipeline.
+5. Click OK.
+6. Select Pipeline Script from SCM.
+7. Select Git.
+8. Enter the GitHub repository URL.
+9. Select branch main.
+10. Enter Script Path as Jenkinsfile.
+11. Click Save.
+Step 8: Execute Pipeline
+1. Click Build Now.
+2. Open Console Output.
+3. Observe Checkout, Install, Run, Test and Package stages.
+4. Check whether the ZIP file is generated.
+For automatic builds on every commit, configure GitHub webhook and enable the push trigger in Jenkins.
+Expected Output
+Hello Python CI/CD
+Addition: 30
+
+2 passed
+
+Python Build Successful
+Finished: SUCCESS
+
+
+Result
+Thus, the Python application is successfully integrated with Jenkins and GitHub using Pipeline Script. The application is automatically checked out, executed, tested and packaged.
+
+6. Explore Docker Commands for Container Management
+Aim
+To explore and execute various Docker commands used for managing Docker images, containers, volumes and networks.
+Requirements
+1. Docker Desktop
+2. Windows operating system
+3. Command Prompt / PowerShell
+4. Internet connection
+Introduction
+Docker is an open-source platform used to develop, build and run applications inside containers.
+
+A container is a lightweight environment that contains an application and its required dependencies.
+
+Docker is used to:
+- Create and manage containers.
+- Download and manage images.
+- Start and stop containers.
+- Manage storage volumes.
+- Manage Docker networks.
+Important Docker Commands
+1. Check Docker Version
+docker --version
+
+
+Displays the installed Docker version.
+
+2. Display Docker Information
+docker info
+
+
+Displays complete Docker system information.
+
+3. Download Docker Image
+docker pull nginx
+
+
+Downloads the Nginx image from Docker Hub.
+
+4. Display Docker Images
+docker images
+
+
+Displays all downloaded Docker images.
+
+5. Create and Run Container
+docker run -d -p 8080:80 --name mycontainer nginx
+
+
+Creates and starts an Nginx container.
+
+6. Display Running Containers
+docker ps
+
+
+Displays currently running containers.
+
+7. Display All Containers
+docker ps -a
+
+
+Displays running and stopped containers.
+
+8. Stop Container
+docker stop mycontainer
+
+
+Stops the running container.
+
+9. Start Container
+docker start mycontainer
+
+
+Starts the stopped container.
+
+10. Restart Container
+docker restart mycontainer
+
+
+Restarts the container.
+
+11. Remove Container
+docker rm mycontainer
+
+
+Removes the stopped container.
+
+12. Remove Docker Image
+docker rmi nginx
+
+
+Removes the Docker image if it is not being used by a container.
+
+13. Display Container Logs
+docker logs mycontainer
+
+
+Displays container execution logs.
+
+14. Access Container
+docker exec -it mycontainer sh
+
+
+Opens the terminal inside the container.
+
+15. Copy Files into Container
+docker cp index.html mycontainer:/usr/share/nginx/html/
+
+
+Copies a file into the container.
+
+16. Inspect Container
+docker inspect mycontainer
+
+
+Displays detailed information about the container.
+
+17. Create Docker Volume
+docker volume create myvolume
+
+
+Creates a Docker volume for storing data.
+
+18. Display Docker Volumes
+docker volume ls
+
+
+Displays all Docker volumes.
+
+19. Create Docker Network
+docker network create mynetwork
+
+
+Creates a Docker network.
+
+20. Display Docker Networks
+docker network ls
+
+
+Displays all Docker networks.
+
+21. Remove Unused Docker Resources
+docker system prune
+
+
+Removes unused Docker resources after confirmation.
+Procedure
+1. Install Docker Desktop.
+2. Open Docker Desktop and start Docker Engine.
+3. Open Command Prompt.
+4. Execute docker --version.
+5. Download Nginx using docker pull nginx.
+6. View images using docker images.
+7. Create a container using docker run.
+8. View containers using docker ps.
+9. Stop and restart the container.
+10. Create volumes and networks.
+11. Remove unused containers and images.
+Expected Output
+Docker version  XX.X.X
+
+REPOSITORY    TAG       IMAGE ID
+nginx         latest    xxxxx
+
+CONTAINER ID   IMAGE    STATUS
+xxxxx          nginx    Up
+
+
+Open the browser:
+http://localhost:8080
+
+
+The Nginx welcome page will be displayed.
+Result
+Thus, various Docker commands for managing images, containers, volumes and networks are successfully executed.
+
+ 7. th 
+     Develop a Simple Containerized Application Using Docker (Node.js and Python)
+For your DevOps lab exam, you can write and execute both applications separately. These are simple programs with Dockerfiles, commands, and outputs.
+1. Node.js Application Using Docker
+Step 1: Create a project folder
+mkdir nodeapp
+cd nodeapp
+
+
+Step 2: Create app.js
+const http = require('http');
+
+http.createServer((req, res) => {
+    res.end("Hello from Node.js Docker Container!");
+}).listen(3000);
+
+console.log("Server running on port 3000");
+
+
+Step 3: Create Dockerfile
+FROM node:18
+WORKDIR /app
+COPY app.js .
+EXPOSE 3000
+CMD ["node", "app.js"]
+
+
+Step 4: Build Docker image
+docker build -t nodeapp .
+
+
+Output:
+Successfully built image
+
+
+Step 5: Run Docker container
+docker run -d -p 3000:3000 --name nodecontainer nodeapp
+
+
+Output:
+Container started successfully
+
+
+Step 6: Check output
+
+Open browser:
+http://localhost:3000
+
+
+Expected output
+Hello from Node.js Docker Container!
+
+
+Step 7: Check running container
+docker ps
+
+
+Output:
+CONTAINER ID   IMAGE     STATUS         PORTS
+abc123         nodeapp   Up             3000->3000
+
+
+
+2. Python Application Using Docker
+Step 1: Create a project folder
+mkdir pythonapp
+cd pythonapp
+
+
+Step 2: Create app.py
+print("Hello from Python Docker Container!")
+
+
+
+Step 3: Create Dockerfile
+FROM python:3.11
+WORKDIR /app
+COPY app.py .
+CMD ["python", "app.py"]
+
+
+Step 4: Build Docker image
+docker build -t pythonapp .
+
+
+Output:
+Successfully built image
+
+
+Step 5: Run Docker container
+docker run --name pythoncontainer pythonapp
+
+
+Expected output
+Hello from Python Docker Container!
+
+
+Step 6: Check Docker images
+docker images
+
+
+Output:
+REPOSITORY   TAG       IMAGE
+pythonapp    latest    IMAGE ID
+nodeapp      latest    IMAGE ID
+
+
+
+Important Docker Commands for Lab Exam
+Command	Purpose
+docker build -t name .	Build image
+docker images	Display images
+docker run image	Run container
+docker ps	Running containers
+docker ps -a	All containers
+docker stop name	Stop container
+docker rm name	Remove container
+docker rmi name	Remove image
+
+Result
+Successfully developed and executed simple containerized applications using Docker for both Node.js and Python.
+
+Lab exam tip: Remember these three main steps:
+1. Create application file (app.js / app.py).
+2. Create a Dockerfile.
+3. Build image and run container.
+For Node.js, access the application through the browser. For Python, the output appears directly in the terminal.
+
+
+
+8th 
+Experiment: Write a simple program in JavaScript and perform testing using Selenium
+Aim: To develop a simple JavaScript program and test it using Selenium WebDriver.
+1. Create HTML file (index.html)
+<html>
+<head>
+    <title>JavaScript Testing</title>
+</head>
+<body>
+    <h2>Addition Program</h2>
+
+    <input type="number" id="a" placeholder="Enter first number">
+    <input type="number" id="b" placeholder="Enter second number">
+
+    <button onclick="add()">Add</button>
+
+    <p id="result"></p>
+
+    <script>
+        function add() {
+            let x = Number(document.getElementById("a").value);
+            let y = Number(document.getElementById("b").value);
+
+            document.getElementById("result").innerHTML =
+                "Result: " + (x + y);
+        }
+    </script>
+</body>
+</html>
+
+
+2. Selenium Testing Program (Python)
+Install Selenium:
+pip install selenium
+
+
+Create test.py:
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+
+driver.get("file:///C:/Users/YourName/index.html")
+
+driver.find_element(By.ID, "a").send_keys("10")
+driver.find_element(By.ID, "b").send_keys("20")
+
+driver.find_element(By.TAG_NAME, "button").click()
+
+result = driver.find_element(By.ID, "result").text
+
+print("Output:", result)
+
+driver.quit()
+
+
+
+ run => python test.py
+Note: Replace YourName with your Windows username and use the correct location of index.html.
+3. Output
+Browser output
+Addition Program
+First number
+
+10
+
+Second number
+
+20
+
+
+Result: 30
+Python console output
+Output: Result: 30
+
+
+
+4. Result
+The JavaScript addition program was successfully developed and tested using Selenium WebDriver.
+
+Important points for lab exam:
+1. JavaScript performs the addition.
+2. Selenium automates browser testing.
+3. find_element() locates HTML elements.
+4. send_keys() enters values.
+5. click() clicks the button.
+6. quit() closes the browser.
+
+
+9th experiment 
+using 7th experiment code 
+
+1. Node.js Application Using Docker
+Step 1: Create a project folder
+
+mkdir nodeapp
+cd nodeapp
+
+
+Step 2: Create app.js
+const http = require('http');
+
+http.createServer((req, res) => {
+    res.end("Hello from Node.js Docker Container!");
+}).listen(3000);
+
+console.log("Server running on port 3000");
+
+
+Step 3: Create Dockerfile
+FROM node:18
+WORKDIR /app
+COPY app.js .
+EXPOSE 3000
+CMD ["node", "app.js"]
+
+
+Step 4: Build Docker image
+docker build -t nodeapp .
+
+
+Output:
+Successfully built image
+
+
+Step 5: Run Docker container
+docker run -d -p 3000:3000 --name nodecontainer nodeapp
+
+
+Output:
+Container started successfully
+
+
+Step 6: Check output
+
+Open browser:
+http://localhost:3000
+
+
+Expected output
+Hello from Node.js Docker Container!
+
+
+Step 7: Check running container
+docker ps
+
+
+Output:
+CONTAINER ID   IMAGE     STATUS         PORTS
+ 
+
+abc123         nodeapp   Up             3000->3000
+ 
+
+const { Builder, By } = require('selenium-webdriver');
+
+async function test() {
+    let driver = await new Builder().forBrowser('chrome').build();
+
+    await driver.get('http://localhost:3000');
+
+    let text = await driver.findElement(By.tagName('body')).getText();
+
+    console.log(text);
+    await driver.quit();
+}
+
+test();
+
+
+
+Run:
+node test.js
+
+
+Output:
+Hello from Node.js Docker Container!
